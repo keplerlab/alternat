@@ -1,0 +1,17 @@
+{
+    "metadata": {
+        "filename": "abc.jpg",
+        "filepath": "/path/to/file",
+        "storageType": "local / remote",
+        "width": 1300,
+        "height": 1800,
+        "type": "jpg",
+        "base64": "base64 image"
+    },
+
+    "alt":"<Recommended alt text by the system logic>",
+    "caption":"<abstracted caption if available>",
+    "ocr":"<abstracted ocr if available>",
+    "labels":"<array of labels if and as available>"
+
+}

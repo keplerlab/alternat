@@ -1,0 +1,2 @@
+recursive-include alternat *.js
+recursive-exclude node_modules *
