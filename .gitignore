@@ -13,6 +13,9 @@ images_with_text
 api/log.txt
 log.txt
 
+# VSCODE folder
+.vscode/
+
 #exclude test folder
 test
 

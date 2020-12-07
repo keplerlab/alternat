@@ -52,7 +52,7 @@ ARG HOME_DIR=/usr/local/alternat
 # Export the environment variable AIRFLOW_HOME where airflow will be installed
 ENV ALTERNAT_HOME=${HOME_DIR}
 
-COPY ./requirements-python3.8.txt /requirements-python3.8.txt
+COPY ./setup_scripts/requirements-python3.8.txt /requirements-python3.8.txt
 
 RUN pip install --upgrade pip && \
 #    useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow && \
@@ -90,5 +90,5 @@ RUN (echo "import easyocr" ; echo "reader = easyocr.Reader(['en'])" ) | python
 EXPOSE 8080
 ENV SHELL /bin/bash
 # Execute the entrypoint.sh
-ENTRYPOINT ["bash", "./sample/entrypoint.sh" ]
+ENTRYPOINT ["bash", "./setup_scripts/entrypoint.sh" ]
 

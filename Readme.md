@@ -28,16 +28,26 @@ jpeg, jpg and png are supported.
 1) Install node (>=v.12)
 2) Install Python >= 3.8 
 3) pip install alternat
+
+Note 1: for Windows, please install torch and torchvision first by following the official instruction here https://pytorch.org. On pytorch website, be sure to select the right CUDA version you have. If you intend to run on CPU mode only, select CUDA = None. Or use Docker compose for running instructions [here](https://alternat.readthedocs.io/en/main/installing_alternat.html#installation-using-docker)
+
 4) Install apify at alternat designated folder
-```bash
 
-# For ubuntu / linux run this command before installing apify
-sudo apt-get install -y procps  libxss1 fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf ffmpeg libsm6 libxext6
-
-mkdir -p ~/.alternat && cd ~/.alternat && npm install apify && cd -
+For Windows go to setup_scripts and execute batch script
 
 ```
+install_apify_window.bat 
+```
 
+For Ubuntu/Linux goto setup_scripts and execute bash script
+```
+sudo sh install_apify_ubuntu.sh
+```
+
+For Mac execute following command
+```bash
+mkdir -p ~/.alternat && cd ~/.alternat && npm install apify && cd -
+```
       
 
 
@@ -51,16 +61,46 @@ mkdir -p ~/.alternat && cd ~/.alternat && npm install apify && cd -
     ```
     $cd path_to_the_folder_repo_cloned
     ```
-##### Mac and Linux
-7) Run the setup if alternat to be used as standalone application:
-    ``` 
+7) Install apify at alternat designated folder
+
+For Windows goto setup_scripts and execute batch script
+
+```
+install_apify_window.bat 
+```
+
+For Ubuntu/Linux goto setup_scripts and execute bash script
+```
+sudo sh install_apify_ubuntu.sh
+```
+
+For Mac execute following command
+```bash
+mkdir -p ~/.alternat && cd ~/.alternat && npm install apify && cd -
+```
+
+8) Go to setup_scripts folder and run the setup if alternat to be used as standalone application:
+``` 
     sh install_application_mode.sh 
-    ```
+```
 
    Run the setup if alternat to be used as service:
-    ``` 
+``` 
     sh install_api_mode.sh 
-    ``` 
+``` 
+
+**Note**: For Windows run following batch files from setup_scripts folder instead of above bash scripts
+
+``` 
+    install_application_mode_windows.bat 
+```
+
+Run the setup if alternat to be used as service:
+``` 
+    install_api_mode_windows.bat
+``` 
+
+
 
 ### Installation using Docker
 1. Download and Install Docker Desktop for Mac using this link [docker-desktop](https://www.docker.com/products/docker-desktop)
@@ -82,6 +122,9 @@ docker-compose up
 ```
 docker-compose exec alternat bash
 ```
+
+7. You can use this command line to execute collect or generate command line application like [this](https://alternat.readthedocs.io/en/main/using_alternat.html#application-mode-via-cli-command-line-interface) . 
+
 ### Installation using Anaconda python
 
 1. Install node (>=v.12) 
@@ -91,12 +134,37 @@ docker-compose exec alternat bash
 conda env create -f environment.yml
 ```
 
+For windows use environment_windows.yml file for conda env create
+
+```
+conda env create -f environment_windows.yml
+```
+
 3. If you want to do image downloads from websites (collect step in alternat) using apify pupeeter you need to also first install nodejs and then goto folder apify. Run npm install:
 ```
 cd <repo_path>
 cd alternat/collection/apify
 npm install
 ```
+
+4. Install apify at alternat designated folder
+
+For Windows goto setup_scripts and execute batch script
+
+```
+install_apify_window.bat 
+```
+
+For Ubuntu/Linux goto setup_scripts and execute bash script
+```
+sudo sh install_apify_ubuntu.sh
+```
+
+For Mac execute following command
+```bash
+mkdir -p ~/.alternat && cd ~/.alternat && npm install apify && cd -
+```
+
 
 ## Running generate task using command line:
 
@@ -148,3 +216,18 @@ First stage is called collection stage, it can be used to crawl and download ima
     # To run the collection 
     python app.py collect --collect-using-apify --download-recursive <WEBSITE_URL> ./DATADUMP
 ```
+
+
+
+## Knows Issue / Troubleshooting
+
+1. If you get error like **Error: spawn wmic.exe ENOENT** while running collect command (using apify) in alternat on **Microsoft Windows** 
+This indicates that the wmic utility's directory is not found on your PATH. Open the advanced System Properties window (you can open the System page with Windows+Pause/Break) and on the Advanced tab, click Environment Variables. In the section for system variables, find PATH (or any capitalization thereof). Add this entry to it:
+```
+%SystemRoot%\System32\Wbem
+```
+Note that entries are delimited by semicolons.
+
+### Attributions
+1. For open source ocr we are using EasyOCR project https://github.com/JaidedAI/EasyOCR by Rakpong Kittinaradorn.
+2. For web crawling we are using apify wrapper over puppeteer library https://apify.com/. 

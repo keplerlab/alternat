@@ -27,7 +27,7 @@ def custom_command():
             print("\n Subprocess error")
             sys.exit(str(e.output))
     else:
-        sys.exit("Currently only Mac and Linux are supported")
+        print("skipping installation of apify, Please make sure to install pytorch first")
 
 
 class CustomInstallCommand(install):
@@ -90,6 +90,7 @@ dep_groups = {
 }
 
 __version__ = None # Explicitly set version.
+# TODO use os.path instead of front slash
 exec(open('alternat/version.py').read()) # loads __version__
 
 requirements = [y for x in dep_groups.values() for y in x]

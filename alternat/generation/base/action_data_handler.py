@@ -1,7 +1,7 @@
 from __future__ import annotations
 from .actions import SupportedActions
 from alternat.generation.utilities import save_json_to_disk
-
+import os
 
 class Handler(object):
     """Implements chain of responsibilty for rule engine handlers.
@@ -98,7 +98,7 @@ class ActionDataHandler(Handler):
         dir_path = output_dir
         filename = result[self.actions.get_metadata_key()]["filename"]
         name = filename.rsplit(".", 1)[0] + "_" + self.filename_postfix
-        filepath = dir_path + "/" + name + ".json"
+        filepath = os.path.join( dir_path , name + ".json")
         save_json_to_disk(dir_path, result, filepath)
         return filepath
 

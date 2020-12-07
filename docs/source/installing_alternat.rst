@@ -14,15 +14,28 @@ Install using pypi
 
       pip install alternat
 
+Note 1: for Windows, please install torch and torchvision first by following the official instruction here https://pytorch.org.
+On pytorch website, be sure to select the right CUDA version you have.
+If you intend to run on CPU mode only, select CUDA = None. Or use Docker compose
+for running instructions [here](https://alternat.readthedocs.io/en/main/installing_alternat.html#installation-using-docker)
+
+
 4. Install apify at alternat designated folder
 
-    .. code-block:: bash
+For Windows go to setup_scripts and execute batch script ::
 
-      # For ubuntu / linux run this command before installing apify
-      sudo apt-get install -y procps  libxss1 fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf ffmpeg libsm6 libxext6
+    install_apify_window.bat 
+
+
+
+For Ubuntu/Linux goto setup_scripts and execute bash script ::
+
+    sudo sh install_apify_ubuntu.sh
+
+
+For Mac execute following command ::
 
       mkdir -p ~/.alternat && cd ~/.alternat && npm install apify && cd -
-
 
 
 Install from source
@@ -40,17 +53,39 @@ Install from source
 
       git clone https://github.com/keplerlab/alternat.git
 
-5. Run the setup if alternat is to be used as a standalone application (for mac and linux only)
+5. Change the directory to the directory where you have cloned your repo ::
 
-    .. code-block:: bash
+    $cd path_to_the_folder_repo_cloned
 
-      sh install_application_mode.sh
+6. Install apify at alternat designated folder
 
-5. Run the setup if alternat is to be used as a service exposed over http.
+For Windows goto setup_scripts and execute batch script ::
 
-    .. code-block:: bash
+    install_apify_window.bat 
 
-      sh install_api_mode.sh
+For Ubuntu/Linux goto setup_scripts and execute bash script::
+
+    sudo sh install_apify_ubuntu.sh
+
+For Mac execute following command ::
+  
+    mkdir -p ~/.alternat && cd ~/.alternat && npm install apify && cd -
+7. Go to setup_scripts folder and run the setup if alternat to be used as standalone application::
+
+    sh install_application_mode.sh 
+
+   Run the setup if alternat to be used as service::
+
+    sh install_api_mode.sh 
+
+**Note**: For Windows run following batch files from setup_scripts folder instead of above bash scripts::
+
+    install_application_mode_windows.bat 
+
+Run the setup if alternat to be used as service::
+
+    install_api_mode_windows.bat
+
 
 
 Installation using Docker
@@ -93,3 +128,29 @@ Installation using Anaconda python
     .. code-block:: bash
 
       conda env create -f environment.yml
+
+For windows use environment_windows.yml file for conda env create
+
+    .. code-block:: bash
+
+      conda env create -f environment_windows.yml
+
+3. If you want to do image downloads from websites (collect step in alternat) using apify pupeeter you need to also first install nodejs and then goto folder apify. Run npm install::
+
+    cd <repo_path>
+    cd alternat/collection/apify
+    npm install
+
+4. Install apify at alternat designated folder
+
+For Windows goto setup_scripts and execute batch script::
+
+    install_apify_window.bat 
+
+For Ubuntu/Linux goto setup_scripts and execute bash script::
+
+    sudo sh install_apify_ubuntu.sh
+
+For Mac execute following command::
+    
+    mkdir -p ~/.alternat && cd ~/.alternat && npm install apify && cd -
