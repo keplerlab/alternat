@@ -49,7 +49,7 @@ docker-compose exec alternat bash
 
 ### Installation from pypi, source and Anaconda Python
 
-Please refer to repective insallation guide for [macOS](https://alternat.readthedocs.io/en/main/installing_alternat_macos.html), [ubuntu](https://alternat.readthedocs.io/en/main/installing_alternat_ubuntu.html) and 
+Please refer to os specific respective installation guides for [macOS](https://alternat.readthedocs.io/en/main/installing_alternat_macos.html), [ubuntu](https://alternat.readthedocs.io/en/main/installing_alternat_ubuntu.html) and 
 [Windows](https://alternat.readthedocs.io/en/main/installing_alternat_windows.html) respectively. 
 
 ## Running generate task using command line:
