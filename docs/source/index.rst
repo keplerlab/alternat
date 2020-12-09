@@ -43,7 +43,9 @@ either passed on as is or as a recommendation to a reviewer?
 .. toctree::
    :maxdepth: 1
 
-   Installing alternat <installing_alternat>
+   Installing alternat macOS <installing_alternat_macos>
+   Installing alternat ubuntu <installing_alternat_ubuntu>
+   Installing alternat windows <installing_alternat_windows>
    Running alternat in 5 minutes <running_alternat_in_5_minutes>
    Understanding alternat <understanding_alternat>
    Configuring alternat <configuring_alternat>

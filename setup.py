@@ -10,51 +10,10 @@ from setuptools import find_packages
 from setuptools.command.develop import develop
 from setuptools.command.install import install
 from setuptools.command.egg_info import egg_info
-# def npm_install(args=["npm","--global", "install", "apify"]):
-#     subprocess.Popen(args, shell=True)
-
-def custom_command():
-    import sys
-    if sys.platform in ['darwin', 'linux']:
-        print("\n\n***** Installing apify from npm ...", flush=True)
-        node_folder_path = os.path.join(os.path.expanduser("~"), ".alternat")
-        if not os.path.exists(node_folder_path):
-            os.mkdir(node_folder_path)
-        try:
-            output = subprocess.check_output(["npm", "install", "apify"], cwd=node_folder_path)
-            #print(output, file=sys.stderr)
-        except subprocess.CalledProcessError as e:
-            print("\n Subprocess error")
-            sys.exit(str(e.output))
-    else:
-        print("skipping installation of apify, Please make sure to install pytorch first")
-
-
-class CustomInstallCommand(install):
-    def run(self):
-        install.run(self)
-        custom_command()
-
-
-class CustomDevelopCommand(develop):
-    def run(self):
-        develop.run(self)
-        custom_command()
-
-
-class CustomEggInfoCommand(egg_info):
-    def run(self):
-        egg_info.run(self)
-        custom_command()
 
 
 with open("Readme.md", "r", encoding='utf-8') as fh:
     long_description = fh.read()
-
-#if sys.version_info >= (3,8):
-#    sys.exit("Python version greater than 3.7 not supported because of numpy and moviepy compatibility issues with python version 3.8")
-
-
 
 # helper functions to make it easier to list dependencies not as a python list, but vertically w/ optional built-in comments to why a certain version of the dependency is listed
 def cleanup(x):
@@ -136,11 +95,6 @@ setup(
         "Documentation": "https://alternat.readthedocs.io",
         "Source": "https://github.com/keplerlab/alternat",
         "Tracker": "https://github.com/keplerlab/alternat/issues",
-    },
-    cmdclass={
-        'install': CustomInstallCommand,
-        'develop': CustomDevelopCommand,
-        'egg_info': CustomEggInfoCommand,
     },
     include_package_data=True,
     zip_safe=False,

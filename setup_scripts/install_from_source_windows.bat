@@ -12,5 +12,3 @@ if not exist %userprofile%\.alternat mkdir %userprofile%\.alternat
 cd  %userprofile%\.alternat 
 npm install apify 
 popd
-cd api
-uvicorn message_processor:app --port 8080 --host 0.0.0.0 --reload 2>&1 | tee -a log.txt
