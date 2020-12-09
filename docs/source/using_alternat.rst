@@ -13,12 +13,12 @@ Collection:
 1. Collect and store images from a URL and store them in a folder sample/images/test
     .. code-block:: bash
 
-      python app.py collect --url=”https://page_url” --output-dir-path="sample/images/test"
+      python app.py collect --url="https://page_url" --output-dir-path="sample/images/test"
 
 2. Collect and store the images from a URL **recursively** and store them in a folder sample/images/test
     .. code-block:: bash
 
-      python app.py collect --url=”https://page_url” --output-dir-path="sample/images/test" --download-recursively=true
+      python app.py collect --url="https://page_url" --output-dir-path="sample/images/test" --download-recursively=true
 
 |
 
@@ -27,18 +27,18 @@ Generation
 1. Generate alt-text for the images in a directory name sample/images_with_text and save data in directory structure results:
     .. code-block:: bash
 
-      python app.py generate --input-dir-path=”sample/images_with_text” --output-dir-path=”results”
+      python app.py generate --input-dir-path="sample/images_with_text" --output-dir-path="results"
 
 
 2. Generate alt-text for a single image in a folder sample/images_with_text and save its result in a directory inside results:
     .. code-block:: bash
 
-      python app.py generate --input-image-file-path=”sample/images_with_text/sample1.png” --output-dir-path=”results”
+      python app.py generate --input-image-file-path=./sample/images_with_text/sample1.png --output-dir-path=./results 
 
 3. Generate alt-text based on user defined (custom) config for driver azure :
     .. code-block:: bash
 
-      python app.py generate --input-image-file-path=”sample/images_with_text/sample1.png” --output-dir-path=”results” --driver-config-file-path=”sample/generator_driver_conf/azure.json”
+      python app.py generate --input-image-file-path=./sample/images/sample1.jpg --output-dir-path=./results --driver-config-file-path=./sample/generator_driver_conf/azure.json
 
     The above command can be changed based on the driver by using the driver
     sample files under sample/generator_driver_conf. For example, to use google driver
@@ -86,7 +86,7 @@ Generator:
 
       # to use a specific driver pass the driver name when instantiating. For e.g, to use
       # azure driver use
-      generator = Generator(“azure”)
+      generator = Generator("azure")
 
       # generate the alt text
       generator.generate_alt_text_from_file("sample/images_with_text/sample1.png", "results")

@@ -24,7 +24,7 @@ Below is the 5-minute guide to run alternat in the modes described above:
 
     .. code-block:: bash
 
-      python app.py collect --url=”https://page_url” --output-dir-path="sample/images/test"
+      python app.py collect --url="https://page_url" --output-dir-path="sample/images/test"
 
     |
 
@@ -34,7 +34,7 @@ Below is the 5-minute guide to run alternat in the modes described above:
 
     .. code-block:: bash
 
-      python app.py generate --input-dir-path=”sample/images_with_text” --output-dir-path=”results”
+      python app.py generate --input-dir-path="sample/images_with_text" --output-dir-path="results"
 
     |
 
@@ -42,7 +42,7 @@ Below is the 5-minute guide to run alternat in the modes described above:
 
     .. code-block:: bash
 
-      python app.py generate --input-image-file-path=”sample/images_with_text/sample1.png” --output-dir-path=”results”
+      python app.py generate --input-image-file-path="sample/images_with_text/sample1.png" --output-dir-path="results"
 
     |
 
@@ -79,7 +79,7 @@ Below is the 5-minute guide to run alternat in the modes described above:
 
       # generate alt text from file (file at location sample/images_with_text/sample1.png
       # and results saved at location folder results)
-      generator.generate_alt_text_from_file(“sample/images_with_text/sample1.png”, “results”)
+      generator.generate_alt_text_from_file("sample/images_with_text/sample1.png", "results")
 
       # OR
 
