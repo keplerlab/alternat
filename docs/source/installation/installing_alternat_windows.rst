@@ -1,24 +1,23 @@
-Installing alternat macOS
-==========================
+Installing alternat windows 
+============================
 
-Install using pypi (macOS)
-----------------------------
+Install using pypi (Windows)
+-----------------------------
 
 1. Install Node (>=v.12)
 
 2. Install Python (>=3.8)
 
-3. Install alternat::
+3. Install apify by first downloading install_from_pypi_windows.bat script 
+located at setup_scripts folder in alternat repo 
+[link](https://github.com/keplerlab/alternat/blob/main/setup_scripts/install_from_pypi_windows.bat) 
+and then executing downloaded script ::
 
-    pip install alternat
-
-4. Install apify at alternat designated folder::
-
-    mkdir -p ~/.alternat && cd ~/.alternat && npm install apify && cd -
+    .\install_from_pypi_windows.bat
 
 
-Install from source (macOS)
------------------------------
+Install from source (Windows)
+------------------------------
 
 1. Install git
 
@@ -26,7 +25,7 @@ Install from source (macOS)
 
 3. Install Python (>=3.8)
 
-4. Open terminal and clone the repo::
+4. Open terminal and clone the repo
 
     git clone https://github.com/keplerlab/alternat.git
 
@@ -34,17 +33,16 @@ Install from source (macOS)
 
     $cd path_to_the_folder_repo_cloned
 
-6. Install apify at alternat designated folder::
-  
-    mkdir -p ~/.alternat && cd ~/.alternat && npm install apify && cd -
-
-7. Install alternat using setup.py ::
-
-    python setup.py install 
+6. Install apify by executing given script ::
+        
+    cd setup_scripts 
+    .\install_from_source_windows.bat
 
 
-Installation using Anaconda python (macOS)
--------------------------------------------
+
+
+Installation using Anaconda python (Windows)
+----------------------------------------------
 
 1. Install git
 
@@ -62,22 +60,24 @@ Installation using Anaconda python (macOS)
 
 
 6. Create conda environment and install dependencies using
-   environment.yml file ::
+   enviorment_windows.yml file ::
 
     cd setup_scripts
-    conda env create --name alternat --file=environment.yml
+    conda env create --name alternat --file=enviorment_windows.yml
 
 7. Activate newly created environment::
 
     conda activate alternat
 
-8. Install apify at alternat designated folder::
+8. Install apify by executing given script ::
+        
+    cd setup_scripts
+    .\install_apify_windows.bat
 
-    mkdir -p ~/.alternat && cd ~/.alternat && npm install apify && cd -
 
 
-Installation using Docker (macOS)
-----------------------------------
+Installation using Docker (Windows)
+------------------------------------
 
 1. Download and Install Docker Desktop for Mac using link: https://docs.docker.com/docker-for-mac/install/
 
