@@ -1,5 +1,5 @@
 Configuring alternat
-====================
+=====================
 
 Alternat can be configured at a global generator level or at the driver level with settings related to individual driver.
 We discuss configuration for both the generator and the driver for Application as well as Library mode below:
@@ -218,3 +218,40 @@ and run these commands to set generator config:
     # run generator over an image and dump the output inside “results” folder
     # this will run with DEBUG=true.
     generator.generate_alt_text_from_file("sample/images_with_text/sample1.png", "results")
+
+
+Configure Web API
+-------------------------
+
+Web API use opensource driver by default. Both application mode and Web API internally rely
+on the alternat library. To configure Web API for different driver and configuration the following changes are required:
+
+1. Navigate to **api** folder.
+
+2. Locate file **message_processor.py**. Here you will see the Generator being instantiated (just like in library mode).
+
+3. Use the samples from **Library Mode** section under :ref:`Configure Driver` to configure web API using alternat library.
+
+Here is an example to say change the driver to azure. In **message_processor.py**,
+
+.. code-block:: bash
+
+    # find the following statement
+    generator = Generator()
+
+    # for azure, change the statement to this
+    generator = Generator(“azure”)
+
+    # following statements change the driver specific configuration
+    # add this to set subscription key and endpoint URL for azure
+    generator_driver_config = {"SUBSCRIPTION_KEY": "yoursubscriptionkey", "ENDPOINT":"https://<ENTER_PROJECT_NAME>.cognitiveservices.azure.com/"}
+
+    # add this to update the threshold value for caption, OCR and label
+    generator_driver_config = {"CAPTION_CONFIDENCE_THRESHOLD": 0.2, "OCR_CONFIDENCE_THRESHOLD": 0.3, "LABEL_CONFIDENCE_THRESHOLD":0.75}
+
+    #  add this to update OCR_HEIGHT_RATIO_TO_IMAGE_THRESHOLD
+    generator_driver_config = {"OCR_HEIGHT_RATIO_TO_IMAGE_THRESHOLD":0.015}
+
+    # add this to set the configuration
+    generator.set_driver_config(generator_driver_config)
+
