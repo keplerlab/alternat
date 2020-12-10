@@ -115,7 +115,7 @@ Generation:
       # Go to api folder
 
       # run this command to start the service
-      uvicorn message_processor:app --port 8080 --host 0.0.0.0 --reload 2>&1 | tee -a log.txt
+      uvicorn message_processor:app --port 8080 --host 0.0.0.0 --reload 
 
     # send a post request with base64 image to the REST Server
 
