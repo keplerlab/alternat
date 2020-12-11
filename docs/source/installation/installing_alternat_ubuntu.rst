@@ -70,7 +70,7 @@ Installation using Anaconda python (ubuntu)
    environment.yml file ::
 
     cd setup_scripts
-    conda env create --name alternat --file=environment.yml
+    conda env create --name alternat --file=environment_ubuntu.yml
 
 7. Activate newly created environment::
 
