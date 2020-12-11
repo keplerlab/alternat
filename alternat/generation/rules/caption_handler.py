@@ -58,9 +58,9 @@ class CaptionDataHandler(ActionDataHandler):
         if self.has_data():
             caption_data = self.input_data[self.actions.DESCRIBE]
 
-            if caption_data["confidence"] >= self.CONFIDENCE_THRESHOLD and len(caption_data["text"]) > 0:
+            if caption_data["confidence"] >= self.CONFIDENCE_THRESHOLD and len(caption_data["text"].strip()) > 0:
 
-                caption = self.PREFIX_TEXT + caption_data["text"] + ". "
+                caption = self.PREFIX_TEXT + caption_data["text"].strip() + ". "
 
                 if GenerationConfig.DEBUG:
                     interim_result[self.actions.DESCRIBE] = {"caption": caption, "confidence": caption_data["confidence"]}
