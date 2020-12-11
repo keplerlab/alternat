@@ -109,16 +109,27 @@ Generator:
 Service Mode
 --------------------
 
-Generation:
+    In this mode, alternat exposes web API to generate alt-text for an image.
+    Alternat use python based API framework - fastAPI to create APIs. fastAPI comes
+    with a lightweight python server uvicorn which is used to expose the API. To start the server :
+
     .. code-block:: bash
 
       # Go to api folder
+      cd api
 
       # run this command to start the service
-      uvicorn message_processor:app --port 8080 --host 0.0.0.0 --reload 
+      uvicorn message_processor:app --port 8080 --host 0.0.0.0 --reload
 
-    # send a post request with base64 image to the REST Server
 
-    URL: http://localhost:8080/generate_text_base64
+    The following web APIs are available:
 
-    body: { base64: “base64_image_str”}
+    .. code-block:: bash
+
+        # send a post request with base64 image to the Web Server
+        URL: http://localhost:8080/generate_text_base64
+        body: { base64: “base64_image_str”}
+
+        # send a post request with URL of the image to the Web Server
+        URL: http://localhost:8080/generate_text_url
+        body: { url: “url_of_the_image”}
