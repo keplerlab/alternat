@@ -48,5 +48,6 @@ either passed on as is or as a recommendation to a reviewer?
    Understanding alternat <understanding_alternat>
    Configuring alternat <configuring_alternat>
    Using alternat <using_alternat>
+   Extending alternat <extending_alternat>
    Troubleshooting and FAQ <faq>
    Reference Guide <reference>
