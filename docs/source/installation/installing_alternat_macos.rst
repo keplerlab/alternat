@@ -62,10 +62,10 @@ Installation using Anaconda python (macOS)
 
 
 6. Create conda environment and install dependencies using
-   environment.yml file ::
+   alternat.yml file ::
 
     cd setup_scripts
-    conda env create --name alternat --file=environment.yml
+    conda env create --name alternat --file=alternat.yml
 
 7. Activate newly created environment::
 

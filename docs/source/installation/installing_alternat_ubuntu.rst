@@ -67,10 +67,10 @@ Installation using Anaconda python (ubuntu)
 
 
 6. Create conda environment and install dependencies using
-   environment.yml file ::
+   alternat.yml file ::
 
     cd setup_scripts
-    conda env create --name alternat --file=environment_ubuntu.yml
+    conda env create --name alternat --file=alternat.yml
 
 7. Activate newly created environment::
 
