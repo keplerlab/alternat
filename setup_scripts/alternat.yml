@@ -6,7 +6,7 @@ dependencies:
   - pip=20.2.4
   - python=3.8.5
   - pip:
-    - alternat==0.1.2
+    - alternat==0.1.4
     - attrs==20.3.0
     - automat==20.2.0
     - cachetools==4.2.0
@@ -63,16 +63,16 @@ dependencies:
     - requests==2.25.0
     - requests-file==1.5.1
     - rsa==4.6
-    - scikit-image==0.17.2
-    - scipy==1.5.4
+    - scikit-image==0.18.0
+    - scipy==1.6.0rc1
     - scrapy==2.4.0
     - service-identity==18.1.0
     - six==1.15.0
     - starlette==0.13.6
     - tifffile==2020.11.18
     - tldextract==3.0.2
-    - torch==1.7.0
-    - torchvision==0.8.1
+    - torch==1.4.0
+    - torchvision==0.5.0
     - twisted==20.3.0
     - typer==0.3.2
     - typing-extensions==3.7.4.3

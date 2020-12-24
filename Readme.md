@@ -16,7 +16,7 @@ Collection offers convenience methods to download images. It uses puppeteer (hea
 Generation offers convenience methods to generate alt-texts. It offers drivers to generate the alt-texts.
 1. Azure API - Uses Azure API for image captioning and OCR. Note Azure is a paid service.
 2. Google API - Uses google API for image captioning and OCR. Note google is a paid service.
-3. Open Source - Uses free open source alternative for OCR.
+3. Open Source - Uses free open source alternative for OCR and image captioning.
 
 **Supported Video and image file formats**
 jpeg, jpg and png are supported.
@@ -110,4 +110,6 @@ an Github issue.
 
 ### Attributions
 1. For open source ocr we are using EasyOCR project https://github.com/JaidedAI/EasyOCR by Rakpong Kittinaradorn.
-2. For web crawling we are using apify wrapper over puppeteer library https://apify.com/. 
+2. For opensource caption generation we are using model training and inference scripts using method at https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Image-Captioning by Sagar Vinodababu. 
+3. For web crawling we are using apify wrapper over puppeteer library https://apify.com/. 
+

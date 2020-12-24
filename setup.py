@@ -36,6 +36,8 @@ dep_groups = {
     "core": to_list(
         """
         pillow
+        torch==1.4.0
+        torchvision==0.5.0
         google-cloud-vision==1.0.0
         tldextract
         easyocr
@@ -44,6 +46,7 @@ dep_groups = {
         uvicorn
         fastapi==0.62.0
         typer==0.3.2
+        gdown
 """
     )
 }

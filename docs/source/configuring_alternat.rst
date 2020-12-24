@@ -91,8 +91,8 @@ Configure Driver
 Generator comes with 3 drivers:
 
 1. Opensource:
-    Use EasyOCR for generating OCR text. This should be used when there is
-    text in the image as it only has support for OCR at the moment.
+    Currently opensource drivers uses a pytorch based trained model for image captioning based on this `repo <https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Image-Captioning>`_
+    It also uses EasyOCR for generating OCR text in case image have text in it. 
     This is the default driver for generator, does not require any kind of registration and is free to use.
 
 2. Azure:
@@ -113,7 +113,7 @@ The following generator driver settings are available:
 1. CAPTION_CONFIDENCE_THRESHOLD:
     Decimal based threshold to filter out caption data.
     For example, if you only want captions with confidence level above say 70%, then set this value to 0.70.
-    This is most useful when using “azure” driver as Microsoft compute vision API has support for describing an image.
+    This is most useful when using “azure” as driver as Microsoft compute vision API has support for describing an image. This option is also used in opensource driver. 
 
 2. OCR_CONFIDENCE_THRESHOLD:
     Decimal based threshold to filter out OCR data.

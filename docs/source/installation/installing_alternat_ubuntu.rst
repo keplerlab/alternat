@@ -13,10 +13,9 @@ Install using pypi (ubuntu)
     pip install alternat
 
 4. Install apify by first downloading install_apify_ubuntu.sh located at 
-setup_scripts folder in alternat repo
- [link](https://raw.githubusercontent.com/keplerlab/alternat/main/setup_scripts/install_apify_ubuntu.sh) 
-and then executing downloaded script ::
-        
+setup_scripts folder in alternat `Repo link <https://raw.githubusercontent.com/keplerlab/alternat/main/setup_scripts/install_apify_ubuntu.sh>`_  and then executing downloaded script ::
+
+
     sudo sh install_apify_ubuntu.sh
 
 

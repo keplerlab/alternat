@@ -26,7 +26,9 @@ features break up across each task:
 |            |                           +---------------------------+----------------------+
 |            |                           | Open source based.        | Use pytorch based    |
 |            |                           |                           | model for OCR        |
-|            |                           |                           | (EasyOCR)            |
+|            |                           |                           | (EasyOCR) as well as |
+|            |                           |                           | image captioning     |
+|            |                           |                           |                      |
 +------------+---------------------------+---------------------------+----------------------+
 
 Library offers the flexibility of choosing either or both tasks and selecting suitable options from each task.

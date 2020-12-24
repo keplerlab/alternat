@@ -1,10 +1,14 @@
 from .config import Config
+from .pytorchcaption import PytorchCaption
 from alternat.generation.base.analyzer import AnalyzeImageBase
 import os, json, time
 import requests, functools
 from PIL import Image as PIL_Image
 import easyocr
 from alternat.generation.exceptions import InputImageNotAvailable
+import numpy as np
+import cv2
+
 
 
 class AnalyzeImage(AnalyzeImageBase):
@@ -17,6 +21,7 @@ class AnalyzeImage(AnalyzeImageBase):
         super(AnalyzeImage, self).__init__()
         self.config = Config
         self.reader = easyocr.Reader(['en'])
+        self.captionworker = PytorchCaption()
 
     def modifyBoundingBoxData(self, bounding_box: list):
         """Transform bounding box data as per the convention. EasyOCR return bounding box info in the format
@@ -79,8 +84,15 @@ class AnalyzeImage(AnalyzeImageBase):
         :param image: PIL Image object
         :type image: PIL_Image
         """
-
-        self.data[self.actions.DESCRIBE] = {}
+        opencv_image = np.array(image)
+        #im_np = np.asarray(self.pil_to_image_content(image))
+        opencv_image = cv2.cvtColor(opencv_image, cv2.COLOR_RGB2BGR)
+        #small = cv2.resize(opencv_image, (0,0), fx=0.25, fy=0.25) 
+        #cv2.imshow("window_name", small)
+        #cv2.waitKey(0)
+        caption, confidence = self.captionworker.getCaptions(opencv_image)
+        final_caption_data = {"text": caption, "confidence": confidence}
+        self.data[self.actions.DESCRIBE] = final_caption_data
 
     # TODO: Add open source implementation for image labelling
     def extract_labels(self, image: PIL_Image):
