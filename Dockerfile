@@ -56,7 +56,7 @@ COPY ./setup_scripts/requirements-python3.8.txt /requirements-python3.8.txt
 
 RUN pip install --upgrade pip && \
 #    useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow && \
-    pip install scrapy typer treelib pillow google-cloud-vision tldextract typer fastapi uvicorn easyocr pyyaml sphinx_js sphinx_rtd_theme --constraint /requirements-python3.8.txt
+    pip install typer treelib pillow google-cloud-vision tldextract typer fastapi uvicorn torch==1.4.0 torchvision==0.5.0 easyocr gdown pyyaml sphinx_js sphinx_rtd_theme --constraint /requirements-python3.8.txt
 
 RUN npm install -g jsdoc
 
@@ -85,6 +85,12 @@ ENV APIFY_LOCAL_STORAGE_DIR="/usr/local/alternat/alternat/collection/apify/apify
 
 # Pre download EasyOCR Model
 RUN (echo "import easyocr" ; echo "reader = easyocr.Reader(['en'])" ) | python
+
+
+# Pre download caption model
+COPY alternat /usr/local/alternat/alternat
+COPY sample/images_with_text/sample1.png /usr/local/alternat/sample/images_with_text/sample1.png
+RUN cd ${ALTERNAT_HOME} && (echo "from alternat.generation import Generator" ; echo "generator = Generator()" ; echo "generator.generate_alt_text_from_file('sample/images_with_text/sample1.png', 'results')" ) | python
 
 # Expose ports (just to indicate that this container needs to map port)
 EXPOSE 8080
