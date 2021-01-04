@@ -1,4 +1,6 @@
 ## **alternat**: Automate your image alt-text generation workflow.
+
+![](logo.png)
 ### Resources 
 * Homepage and Reference: <https://alternat.readthedocs.io/>
 

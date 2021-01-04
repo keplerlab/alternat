@@ -24,7 +24,7 @@ def collect(
     url: str,
     output_dir_path: str,
     download_recursive: bool = False,
-    collect_using_apify: bool = False,
+    collect_using_apify: bool = True,
 ):
     """Collects image from URL specified.
 
@@ -34,7 +34,7 @@ def collect(
     :type output_dir_path: str
     :param download_recursive: Whether to recursively crawl a site, defaults to False
     :type download_recursive: bool, optional
-    :param collect_using_apify: Whether to crawl using appify crawler, defaults to False
+    :param collect_using_apify: Whether to crawl using appify crawler, defaults to True
     :type collect_using_apify: bool, optional
     """
     collector = Collector()
