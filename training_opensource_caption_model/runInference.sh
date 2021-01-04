@@ -1,0 +1,1 @@
+python caption.py --img=../alternat/sample/images_with_text/sample3.jpeg --model=checkpoint/BEST_checkpoint_coco_5_cap_per_img_5_min_word_freq_after_finetune.pth.tar --word_map=coco/processed/WORDMAP_coco_5_cap_per_img_5_min_word_freq.json --beam_size=5
