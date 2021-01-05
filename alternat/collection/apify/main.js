@@ -54,6 +54,7 @@ Apify.main(async () => {
           headless: true,   
           stealth: true,   
           useChrome: true,
+          args: ['--no-sandbox'],
 
       },
     });
