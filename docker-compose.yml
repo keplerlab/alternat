@@ -2,11 +2,15 @@ version: '3'
 services:
 
   alternat:
-    build: .
+    container_name: alternat
+    build:
+      context: .
+      target: runtime
+    image: alternat
     ports:
     - "8080:8080"
     volumes:
-       - .:/usr/local/alternat/
-       - /usr/local/alternat/alternat/collection/apify/node_modules/
+       - .:/home/myuser/alternat
+       - /home/myuser/alternat/alternat/collection/apify/node_modules/
     environment:
       - SERVER_INTERFACE=0.0.0.0
