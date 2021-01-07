@@ -21,8 +21,8 @@ _GENERATOR_KEY = "GENERATOR"
 
 @app.command("collect")
 def collect(
-    url: str,
-    output_dir_path: str,
+    url: str = None,
+    output_dir_path: str = None,
     download_recursive: bool = False,
     collect_using_apify: bool = True,
 ):
@@ -38,6 +38,16 @@ def collect(
     :type collect_using_apify: bool, optional
     """
     collector = Collector()
+
+    if url is None:
+        typer.echo("ERROR : Specify url from which images needs to be collected using --url argument")
+        return None
+
+    if output_dir_path is None:
+        typer.echo("ERROR : Specify output directory path where the images needs to be collected using "
+                   "--output-dir-path argument")
+        return None
+
     collector.process(url, output_dir_path, download_recursive, collect_using_apify)
 
 
