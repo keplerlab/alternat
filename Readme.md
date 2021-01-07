@@ -94,14 +94,14 @@ First stage is called collection stage, it can be used to crawl and download ima
 ### Use case: Download image from single page 
 ```bash
     # To run the collection 
-    python app.py collect --collect-using-apify <WEBSITE_URL> ./DATADUMP
+     python app.py collect  --url=<WEBSITE_URL> --output-dir-path=./DATADUMP
 ```
 
 ### Use case: Download images recursively for a given site
 
 ```bash
     # To run the collection 
-    python app.py collect --collect-using-apify --download-recursive <WEBSITE_URL> ./DATADUMP
+    python app.py collect --download-recursive --url=<WEBSITE_URL> --output-dir-path=./DATADUMP
 ```
 
 

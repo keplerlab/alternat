@@ -46,6 +46,7 @@ dep_groups = {
         uvicorn
         fastapi==0.62.0
         typer==0.3.2
+        idna<3,>=2.5
         gdown
 """
     )
