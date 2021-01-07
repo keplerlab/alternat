@@ -53,24 +53,24 @@ RUN source /venv/bin/activate  && cd /usr/local/alternat/ && (echo "from alterna
 # base image since the Conda env also includes Python
 # for us.
 FROM apify/actor-node-chrome AS runtime
-
+USER root
 # Copy /venv from the previous stage:
 COPY --from=build /venv /venv
-COPY --from=build /root/.alternat /home/myuser/.alternat
+COPY --from=build /root/.alternat /root/.alternat
 SHELL ["/bin/bash", "-c"]
-USER root
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&\
 DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg libsm6 libxext6 --no-install-recommends \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /src/*.deb 
-USER myuser
+#USER myuser
 
 # Set workdir (it's like a cd inside the container)
 WORKDIR /home/myuser/alternat
 ENV PYTHONPATH "${PYTHONPATH}:/home/myuser/alternat"
 
 # EASYOCR_MODULE_PATH is the location where easyOCR expects model to be downloaded
-ENV EASYOCR_MODULE_PATH="/home/myuser/.alternat/"
+ENV EASYOCR_MODULE_PATH="/root/.alternat/"
 # apify will complain if following is not set
 ENV APIFY_LOCAL_STORAGE_DIR="/home/myuser/alternat/alternat/collection/apify/apify_storage"
 ENV OUTPUT_FOLDER "./DATADUMP/"
