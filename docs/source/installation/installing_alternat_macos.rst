@@ -88,12 +88,8 @@ Installation using Docker (macOS)
 4. Open terminal and run following commands::
 
     cd <path-to-repo> //you need to be in your repo folder
-    docker-compose build
-
-5. Start docker container using this command::
-
     docker-compose up
 
-6. In a new terminal window open terminal and enter into alternat docker container using command::
+5. In a new terminal window open terminal and enter into alternat docker container using command::
 
     docker-compose exec alternat bash

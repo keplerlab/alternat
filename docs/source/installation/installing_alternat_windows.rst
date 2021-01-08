@@ -85,15 +85,11 @@ Installation using Docker (Windows)
 
 3. Change your directory to the cloned repo.
 
-4. Open terminal and run following commands::
+4. Start docker container using this command inside windows powershell or cmd promp::
 
     cd <path-to-repo> //you need to be in your repo folder
-    docker-compose build
-
-5. Start docker container using this command inside windows powershell or cmd promp::
-
     docker-compose up
 
-6. In a new windows powershell or cmd window open terminal and enter into alternat docker container using command::
+5. In a new windows powershell or cmd window open terminal and enter into alternat docker container using command::
 
     docker-compose exec alternat bash

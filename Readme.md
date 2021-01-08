@@ -35,18 +35,14 @@ jpeg, jpg and png are supported.
 4. Open terminal and run following commands
 ```
 cd <path-to-repo> //you need to be in your repo folder
-docker-compose build
-```
-5. Start docker container using this command
-```
 docker-compose up
 ```
-6. In a new terminal window open terminal inside docker container for running alternat using command line type following command:
+5. In a new terminal window open terminal inside docker container for running alternat using command line type following command:
 ```
 docker-compose exec alternat bash
 ```
 
-7. You can use this command line to execute collect or generate command line application like [this](https://alternat.readthedocs.io/en/main/using_alternat.html#application-mode-via-cli-command-line-interface) . 
+6. You can use this command line to execute collect or generate command line application like [this](https://alternat.readthedocs.io/en/main/using_alternat.html#application-mode-via-cli-command-line-interface) . 
 
 
 ### Installation from pypi, source and Anaconda Python
