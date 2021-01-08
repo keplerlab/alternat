@@ -6,7 +6,7 @@ dependencies:
   - pip=20.2.4
   - python=3.8.5
   - pip:
-    - alternat==0.1.4
+    - alternat==0.1.5
     - attrs==20.3.0
     - automat==20.2.0
     - cachetools==4.2.0
