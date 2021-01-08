@@ -63,7 +63,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update &&\
 DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg libsm6 libxext6 --no-install-recommends \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /src/*.deb 
-#USER myuser
 
 # Set workdir (it's like a cd inside the container)
 WORKDIR /home/myuser/alternat

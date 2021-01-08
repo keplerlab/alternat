@@ -3,10 +3,7 @@ services:
 
   alternat:
     container_name: alternat
-    build:
-      context: .
-      target: runtime
-    image: alternat
+    image: keplerlab/alternat:0.1.5
     ports:
     - "8080:8080"
     volumes:
