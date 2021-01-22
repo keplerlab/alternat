@@ -63,7 +63,7 @@ Installation using Anaconda python (Windows)
    enviorment_windows.yml file ::
 
     cd setup_scripts
-    conda env create --name alternat --file=alternat_env_windows.yml
+    conda env create --name alternat --file=alternat.yml
 
 7. Activate newly created environment::
 
